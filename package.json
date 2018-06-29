@@ -1,0 +1,11 @@
+{
+  "name": "han2en",
+  "version": "1.0.0",
+  "description": "Chinese character convert to phonetic alphabet English letter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "LinQuan",
+  "license": "MIT"
+}
