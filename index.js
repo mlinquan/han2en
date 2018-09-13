@@ -402,15 +402,16 @@ zun:'尊遵撙樽鳟',
 zuo:'昨左佐柞做作坐座阝阼胙祚酢'
 };
 
-module.exports = function(han) {
-  var en = '';
+module.exports = function(han, sep) {
+  var en = [];
+  sep = sep || '';
   han.split('').forEach(function(cn) {
     for(var x in pinyin) {
       if(pinyin[x].indexOf(cn) > -1) {
-        en += x;
+        en.push(x);
         break;
       }
     }
   });
-  return en;
+  return en.join(sep);
 };
