@@ -1,15 +1,4 @@
-# han2en
-
-> Chinese character convert to phonetic alphabet English letter
-
-## Install
-```
-npm install han2en --save
-```
-
-## Usage
-```
-var han2en = require('han2en');
+var han2en = require('./index.js');
 
 var en = han2en('林泉');
 console.log(en);
@@ -31,4 +20,3 @@ var en4 = han2en('林泉是帅哥', {
 });
 console.log(en4);
 // l-q-s-s-g
-```

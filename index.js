@@ -404,14 +404,27 @@ zuo:'昨左佐柞做作坐座阝阼胙祚酢'
 
 module.exports = function(han, sep) {
   var en = [];
-  sep = sep || '';
+  var opt = {};
+  if(typeof sep === 'string') {
+    opt.sep = sep || '';
+  }
+  if(typeof sep === 'object') {
+    opt = sep;
+  }
+  if(!opt.sep) {
+    opt.sep = '';
+  }
   han.split('').forEach(function(cn) {
     for(var x in pinyin) {
       if(pinyin[x].indexOf(cn) > -1) {
+        var e = x;
+        if(opt.initial) {
+          e = e.substr(0, 1);
+        }
         en.push(x);
         break;
       }
     }
   });
-  return en.join(sep);
+  return en.join(opt.sep);
 };
