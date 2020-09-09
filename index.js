@@ -415,16 +415,17 @@ module.exports = function(han, sep) {
     opt.sep = '';
   }
   han.split('').forEach(function(cn) {
+    var e = cn;
     for(var x in pinyin) {
       if(pinyin[x].indexOf(cn) > -1) {
-        var e = x;
+        e = x;
         if(opt.initial) {
-          e = e.substr(0, 1);
+          x = x.substring(0, 1);
         }
-        en.push(x);
         break;
       }
     }
+    en.push(e);
   });
   return en.join(opt.sep);
 };
