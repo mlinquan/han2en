@@ -418,10 +418,13 @@ module.exports = function(han, sep) {
     var e = cn;
     for(var x in pinyin) {
       if(pinyin[x].indexOf(cn) > -1) {
-        e = x;
         if(opt.initial) {
           x = x.substring(0, 1);
         }
+        if(opt.handler && typeof opt.handler === 'function') {
+          x = opt.handler(x);
+        }
+        e = x;
         break;
       }
     }
